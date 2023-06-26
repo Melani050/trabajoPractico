@@ -4,5 +4,5 @@ export class Item{
     title: string = '';
     price: number = 0;
     quantity: number = 0;
-    complete: boolean = false;
+    completed: boolean = false;
 }

@@ -1,14 +1,24 @@
-<div>
-    <div>
+<div class="row">
+    <div class="titulo">
+        <!--
+        [cheked] = "" es cuando modifique una propiedad de forma dinamica
+        operador pipe => | , sirve para aplicar una funcion a el contenido, aplicar un metodo.
+        -->
+        <input type="checkbox" [checked]="item.completed" >
         {{ item.title }}
     </div>
-    <div>
-        {{ item.price }}
+    <div class="precio">
+        {{ item.price | currency }}
     </div>
-    <div>
+    <div class="cantidad">
         {{ item.quantity }}
     </div>
-    <div>
-        {{ (item.price * item.quantity) }}
+    <div class="total">
+        {{ (item.price * item.quantity) | currency }}
+    </div>
+
+    <div class="action">
+        <!--  uso de un evento  -->
+        <button (click)="onDelete(item)">Eliminar</button>
     </div>
 </div>

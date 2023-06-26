@@ -23,14 +23,21 @@ export class ItemsComponent implements OnInit {
         title: 'manzana',
         price: 20,
         quantity: 6,
-        complete: false
+        completed: false
       },
       {
         id: 1,
         title: 'pan',
         price: 40,
         quantity: 2,
-        complete: true
+        completed: true
+      },
+      {
+        id: 2,
+        title: 'campera',
+        price: 2000,
+        quantity: 2,
+        completed: false
       }
     ];
   }
