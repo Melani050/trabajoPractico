@@ -12,7 +12,7 @@ export class ItemComponent implements OnInit{
   @Input() item: Item = new Item();
 
   //evento personalizado 
-  @Output() deleteItem: EventEmitter<Item> = new EventEmitter()
+  @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
 
   constructor(){}
 
@@ -22,7 +22,10 @@ export class ItemComponent implements OnInit{
 
   onDelete(item: Item){
     //esto va emitir y le va a llegar a los items
-    this.deleteItem.emit(item)
+    this.deleteItem.emit(item);
+  }
 
+  onToggle(item: Item){
+    item.completed = !item.completed;
   }
 }

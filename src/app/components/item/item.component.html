@@ -1,10 +1,11 @@
-<div class="row">
+<!--  si el item.completed es true va a agregar el estilo de completed, si es false lo va a quitar -->
+<div class="row" [ngClass]="{'completed': item.completed}">
     <div class="titulo">
         <!--
         [cheked] = "" es cuando modifique una propiedad de forma dinamica
         operador pipe => | , sirve para aplicar una funcion a el contenido, aplicar un metodo.
         -->
-        <input type="checkbox" [checked]="item.completed" >
+        <input type="checkbox" [checked]="item.completed" (change)="onToggle(item)" >
         {{ item.title }}
     </div>
     <div class="precio">

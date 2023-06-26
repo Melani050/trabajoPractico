@@ -41,4 +41,9 @@ export class ItemsComponent implements OnInit {
       }
     ];
   }
+
+  deleteItem(item: Item){
+    //filter va devolver los elementos que tengan un id diferente al que esta recibiendo
+    this.items = this.items.filter( x => x.id != item.id);
+  }
 }
