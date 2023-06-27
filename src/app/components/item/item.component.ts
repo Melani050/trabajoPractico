@@ -10,9 +10,9 @@ export class ItemComponent implements OnInit{
   //este componente va a recibir un componente
   //va a recibir una propiedad item de tipo item.
   @Input() item: Item = new Item();
-
   //evento personalizado 
   @Output() deleteItem: EventEmitter<Item> = new EventEmitter();
+  @Output() toggleItem: EventEmitter<Item> = new EventEmitter();
 
   constructor(){}
 
@@ -27,5 +27,7 @@ export class ItemComponent implements OnInit{
 
   onToggle(item: Item){
     item.completed = !item.completed;
+    //va a mendar elemento que lo recibe items.component
+    this.toggleItem.emit(item);
   }
 }
