@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from 'src/app/models/item';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-additem',
@@ -13,7 +15,7 @@ export class AdditemComponent implements OnInit {
   price:number= 0;
   quantity:number= 0;
 
-  constructor() { }
+  constructor(private itemsService: ItemService, private router:Router) { }
 
   ngOnInit(): void {
     
@@ -25,6 +27,10 @@ export class AdditemComponent implements OnInit {
     item.price = this.price;
     item.quantity = this.quantity;
     item.completed = false;
+
+
+    this.itemsService.addItem(item)
+    this.router.navigate(['/']);
   }
   
 }
